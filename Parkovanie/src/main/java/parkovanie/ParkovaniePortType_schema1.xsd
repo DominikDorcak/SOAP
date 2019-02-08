@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://parkovanie/" xmlns:tns="http://parkovanie/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="odparkuj" type="tns:odparkuj"/>
+
+  <xs:element name="odparkujResponse" type="tns:odparkujResponse"/>
+
+  <xs:element name="pocetNavstev" type="tns:pocetNavstev"/>
+
+  <xs:element name="pocetNavstevResponse" type="tns:pocetNavstevResponse"/>
+
+  <xs:element name="zaparkuj" type="tns:zaparkuj"/>
+
+  <xs:element name="zaparkujResponse" type="tns:zaparkujResponse"/>
+
+  <xs:element name="zistiPlnost" type="tns:zistiPlnost"/>
+
+  <xs:element name="zistiPlnostResponse" type="tns:zistiPlnostResponse"/>
+
+  <xs:complexType name="zaparkuj">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="zaparkujResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pocetNavstev">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pocetNavstevResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="odparkuj">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="odparkujResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="zistiPlnost">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="zistiPlnostResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:hashMapWrapper" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hashMapWrapper">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+
